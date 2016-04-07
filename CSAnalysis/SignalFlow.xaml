@@ -15,6 +15,17 @@
             <TextBox x:Name="EdgesBox" HorizontalAlignment="Left" Margin="622,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18.667"/>
             <Button x:Name="InputsButton" Content="Start Inputs" HorizontalAlignment="Left" Margin="898,38,0,0" VerticalAlignment="Top" Width="150" Click="InputsButton_Click"/>
         </Grid>
+        <Grid x:Name="InputGrid" HorizontalAlignment="Left" Height="554" VerticalAlignment="Top" Width="1280" Margin="0,166,0,0">
+            <TextBlock x:Name="YourNodes" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Your Nodes are:" VerticalAlignment="Top" FontSize="21.333" FontWeight="Bold" Margin="44,56,0,0"/>
+            <TextBlock x:Name="AddEdgeText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Add the Edges" VerticalAlignment="Top" FontSize="21.333" FontWeight="Bold" Margin="44,107,0,0"/>
+            <TextBlock x:Name="FromText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="From" VerticalAlignment="Top" FontSize="21.333" FontWeight="Bold" Margin="44,158,0,0"/>
+            <TextBox x:Name="FromBox" HorizontalAlignment="Left" Margin="138,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18.667"/>
+            <TextBlock x:Name="ToText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="To" VerticalAlignment="Top" FontSize="21.333" FontWeight="Bold" Margin="252,158,0,0"/>
+            <TextBox x:Name="ToBox" HorizontalAlignment="Left" Margin="324,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18.667"/>
+            <TextBlock x:Name="ValueText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Value" VerticalAlignment="Top" FontSize="21.333" FontWeight="Bold" Margin="440,158,0,0"/>
+            <TextBox x:Name="ValueBox" HorizontalAlignment="Left" Margin="532,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18.667"/>
+            <Button x:Name="EdgeButton" Content="Add Edge" HorizontalAlignment="Left" Margin="678,158,0,0" VerticalAlignment="Top" Width="150" Click="EdgeButton_Click"/>
+        </Grid>
 
     </Grid>
 </Page>

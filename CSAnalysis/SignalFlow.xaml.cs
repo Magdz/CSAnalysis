@@ -25,10 +25,12 @@ namespace CSAnalysis
 
         private int NodesNum = 0;
         private int EdgesNum = 0;
+        private Graph theGraph;
 
         public SignalFlow()
         {
             this.InitializeComponent();
+            InputGrid.Visibility = Visibility.Collapsed;
         }
 
         private void InputsButton_Click(object sender, RoutedEventArgs e)
@@ -38,22 +40,40 @@ namespace CSAnalysis
                 NodesNum = int.Parse(NodesBox.Text);
                 EdgesNum = int.Parse(EdgesBox.Text);
             }
-            catch (Exception)
-            {
-                return;
-            }
+            catch (Exception) { return; }
             if (NodesNum != 0 && EdgesNum != 0) 
             {
                 NodesBox.IsEnabled = false;
                 EdgesBox.IsEnabled = false;
                 InputsButton.IsEnabled = false;
+                InputGrid.Visibility = Visibility.Visible;
                 StartInput();
             }
         }
 
         private void StartInput()
         {
+            theGraph = new Graph(NodesNum, EdgesNum);
+            for (int i = 0; i < NodesNum; ++i) 
+            {
+                YourNodes.Text += " y" + (i+1);
+            }
+        }
 
+        private void EdgeButton_Click(object sender, RoutedEventArgs e)
+        {
+            int From = 0;
+            int To = 0;
+            string Value = null;
+            try
+            {
+                From = FromBox.Text[1] - 48;
+                To = ToBox.Text[1] - 48;
+                Value = ValueBox.Text;
+            }
+            catch (Exception) { return; }
+            if (From == 0 || To == 0 || Value == null) return;
+            theGraph.AddEdge(From - 1, To - 1, Value);
         }
     }
 }
