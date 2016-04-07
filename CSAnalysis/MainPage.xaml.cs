@@ -26,5 +26,10 @@ namespace CSAnalysis
         {
             this.InitializeComponent();
         }
+
+        private void SignalFlowButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(SignalFlow));
+        }
     }
 }

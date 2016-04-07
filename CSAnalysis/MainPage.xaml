@@ -8,6 +8,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="SignalFlowButton" Content="Signal Flow Graph" HorizontalAlignment="Center" Margin="0,0,0,124" VerticalAlignment="Center" Width="150" Click="SignalFlowButton_Click"/>
+        <Button x:Name="BlockDiagramButton" Content="Block Diagram" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Center" Width="150"/>
 
     </Grid>
 </Page>

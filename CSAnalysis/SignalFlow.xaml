@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="CSAnalysis.SignalFlow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CSAnalysis"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid x:Name="HeaderGrid" Height="100" Margin="0,66,0,0" VerticalAlignment="Top">
+            <TextBlock x:Name="NodesText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Number of Nodes:" VerticalAlignment="Top" FontSize="21.333" FontWeight="Bold" Margin="44,38,0,0"/>
+            <TextBox x:Name="NodesBox" HorizontalAlignment="Left" Margin="256,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18.667"/>
+            <TextBlock x:Name="EdgesText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Number of Egdes:" VerticalAlignment="Top" FontSize="21.333" FontWeight="Bold" Margin="412,38,0,0"/>
+            <TextBox x:Name="EdgesBox" HorizontalAlignment="Left" Margin="622,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18.667"/>
+            <Button x:Name="InputsButton" Content="Start Inputs" HorizontalAlignment="Left" Margin="898,38,0,0" VerticalAlignment="Top" Width="150" Click="InputsButton_Click"/>
+        </Grid>
+
+    </Grid>
+</Page>
