@@ -9,10 +9,10 @@ namespace CSAnalysis
 {
     class Path
     {
-        public ArrayList Nodes;
-        public ArrayList Values;
+        public List<int> Nodes;
+        public List<string> Values;
 
-        public Path(ArrayList Nodes, ArrayList Values)
+        public Path(List<int> Nodes, List<string> Values)
         {
             this.Nodes = Nodes;
             this.Values = Values;

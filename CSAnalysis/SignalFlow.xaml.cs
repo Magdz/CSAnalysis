@@ -96,16 +96,8 @@ namespace CSAnalysis
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            //theGraph.Debuging();
+            theGraph.Debuging();
             theGraph.Analyze();
-            foreach(Path path in theGraph.Paths)
-            {
-                Debug.WriteLine(theGraph.Paths.Count);
-                foreach(string value in path.Values)
-                {
-                    Debug.WriteLine(value);
-                }
-            }
         }
     }
 }

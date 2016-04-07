@@ -14,11 +14,11 @@ namespace CSAnalysis
         private int Edges;
         private string[,] theGraph;
 
-        public ArrayList Paths;
+        private List<Path> Paths;
 
-        static bool[] visited;
-        static ArrayList PathGain;
-        static ArrayList PathNodes;
+        private static bool[] visited;
+        private List<string> PathGain;
+        private List<int> PathNodes;
 
         public Graph(int Nodes, int Edges)
         {
@@ -35,9 +35,9 @@ namespace CSAnalysis
         public void Analyze()
         {
             visited = new bool[Nodes];
-            Paths = new ArrayList();
-            PathNodes = new ArrayList();
-            PathGain = new ArrayList();
+            Paths = new List<Path>();
+            PathNodes = new List<int>();
+            PathGain = new List<string>();
             BackTracking(0, Nodes - 1);
         }
 
@@ -45,7 +45,7 @@ namespace CSAnalysis
         {
             if(start == end)
             {
-                Paths.Add(new Path(PathNodes, PathGain));
+                Paths.Add(new Path(new List<int>(PathNodes), new List<string>(PathGain)));
                 return;
             }
             visited[start] = true;
@@ -65,11 +65,20 @@ namespace CSAnalysis
 
         public void Debuging()
         {
-            for (int i = 0; i < Nodes; ++i)
+            //for (int i = 0; i < Nodes; ++i)
+            //{
+            //    for (int j = 0; j < Nodes; ++j)
+            //    {
+            //        Debug.Write(theGraph[i,j]);
+            //    }
+            //    Debug.WriteLine("");
+            //}
+            foreach (Path path in Paths)
             {
-                for (int j = 0; j < Nodes; ++j)
+                Debug.WriteLine(Paths.Count);
+                foreach (string value in path.Values)
                 {
-                    Debug.Write(theGraph[i,j]);
+                    Debug.Write(value);
                 }
                 Debug.WriteLine("");
             }
