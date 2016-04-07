@@ -25,6 +25,8 @@
             <TextBlock x:Name="ValueText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Value" VerticalAlignment="Top" FontSize="21.333" FontWeight="Bold" Margin="440,158,0,0"/>
             <TextBox x:Name="ValueBox" HorizontalAlignment="Left" Margin="532,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18.667"/>
             <Button x:Name="EdgeButton" Content="Add Edge" HorizontalAlignment="Left" Margin="678,158,0,0" VerticalAlignment="Top" Width="150" Click="EdgeButton_Click"/>
+            <TextBlock x:Name="AddedEdgesText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="21.333" FontWeight="Bold" Margin="44,241,0,0"/>
+            <Button x:Name="DebugButton" Content="Debug" HorizontalAlignment="Left" Margin="678,247,0,0" VerticalAlignment="Top" Click="button_Click"/>
         </Grid>
 
     </Grid>

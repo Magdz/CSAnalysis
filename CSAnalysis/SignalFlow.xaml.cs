@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -26,6 +27,8 @@ namespace CSAnalysis
         private int NodesNum = 0;
         private int EdgesNum = 0;
         private Graph theGraph;
+
+        private int EdgesLeft;
 
         public SignalFlow()
         {
@@ -54,6 +57,8 @@ namespace CSAnalysis
         private void StartInput()
         {
             theGraph = new Graph(NodesNum, EdgesNum);
+            EdgesLeft = EdgesNum;
+            AddEdgeText.Text = "Add the Edges " + EdgesLeft + " Left";
             for (int i = 0; i < NodesNum; ++i) 
             {
                 YourNodes.Text += " y" + (i+1);
@@ -74,6 +79,33 @@ namespace CSAnalysis
             catch (Exception) { return; }
             if (From == 0 || To == 0 || Value == null) return;
             theGraph.AddEdge(From - 1, To - 1, Value);
+            EdgesLeft--;
+            AddEdgeText.Text = "Add the Edges " + EdgesLeft + " Left";
+            if(EdgesLeft == 0)
+            {
+                FromBox.IsEnabled = false;
+                ToBox.IsEnabled = false;
+                ValueBox.IsEnabled = false;
+                EdgeButton.IsEnabled = false;
+            }
+            AddedEdgesText.Text += "- Edge From y" + From + " To y" + To + " with a value " + Value + "\n";
+            FromBox.Text = "";
+            ToBox.Text = "";
+            ValueBox.Text = "";
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            //theGraph.Debuging();
+            theGraph.Analyze();
+            foreach(Path path in theGraph.Paths)
+            {
+                Debug.WriteLine(theGraph.Paths.Count);
+                foreach(string value in path.Values)
+                {
+                    Debug.WriteLine(value);
+                }
+            }
         }
     }
 }
