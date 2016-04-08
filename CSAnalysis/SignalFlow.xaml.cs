@@ -97,7 +97,7 @@ namespace CSAnalysis
         private void button_Click(object sender, RoutedEventArgs e)
         {
             theGraph.Analyze();
-            theGraph.Debuging();
+            theGraph.Debugging();
         }
     }
 }

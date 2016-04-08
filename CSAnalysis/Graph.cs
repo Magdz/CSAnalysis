@@ -85,7 +85,7 @@ namespace CSAnalysis
             visited[start] = false;
         }
 
-        public void Debuging()
+        public void Debugging()
         {
             //for (int i = 0; i < Nodes; ++i)
             //{

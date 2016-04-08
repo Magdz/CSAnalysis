@@ -9,6 +9,7 @@ namespace CSAnalysis
 {
     class Path
     {
+        // Make them public while Debugging
         public List<int> Nodes;
         public List<string> Values;
 
