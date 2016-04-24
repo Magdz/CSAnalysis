@@ -97,7 +97,44 @@ namespace CSAnalysis
         private void button_Click(object sender, RoutedEventArgs e)
         {
             theGraph.Analyze();
-            theGraph.Debugging();
+            //theGraph.Debugging();
+            ShowResults();
+        }
+
+        private void ShowResults()
+        {
+            //--------------------------------Paths---------------------------------
+            ResultsText.Text = "Paths:\n";
+            foreach(Path path in theGraph.Paths)
+            {
+                ResultsText.Text += "P" + (theGraph.Paths.IndexOf(path)+1) + "=";
+                foreach(string value in path.Values)
+                {
+                    if(value != "1")
+                    {
+                        if (path.Values.IndexOf(value) != 0) ResultsText.Text += "*";
+                        ResultsText.Text += value;
+                    }
+                }
+                ResultsText.Text += "\n";
+            }
+            //--------------------------------Loops---------------------------------
+            ResultsText.Text += "Loops:\n";
+            foreach (Path loop in theGraph.Loops)
+            {
+                ResultsText.Text += "L" + (theGraph.Loops.IndexOf(loop) + 1) + "=";
+                foreach (string value in loop.Values)
+                {
+                    if (value != "1")
+                    {
+                        if (loop.Values.IndexOf(value) != 0) ResultsText.Text += "*";
+                        ResultsText.Text += value;
+                    }
+                }
+                ResultsText.Text += "\n";
+            }
+            //--------------------------------Loops---------------------------------
+
         }
     }
 }

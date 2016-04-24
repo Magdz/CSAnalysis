@@ -14,8 +14,8 @@ namespace CSAnalysis
         private int Edges;
         private string[,] theGraph;
 
-        private List<Path> Paths;
-        private List<Path> Loops;
+        public List<Path> Paths;
+        public List<Path> Loops;
 
         private static bool[] visited;
         private static List<string> PathGain;
@@ -95,26 +95,6 @@ namespace CSAnalysis
             //    }
             //    Debug.WriteLine("");
             //}
-            Debug.WriteLine("Paths:");
-            foreach (Path path in Paths)
-            {
-                Debug.WriteLine(Paths.Count);
-                foreach (string value in path.Values)
-                {
-                    Debug.Write(value  + "*");
-                }
-                Debug.WriteLine("");
-            }
-            Debug.WriteLine("Loops:");
-            foreach(Path loop in Loops)
-            {
-                Debug.WriteLine(Loops.Count);
-                foreach (string value in loop.Values)
-                {
-                    Debug.Write(value + "*");
-                }
-                Debug.WriteLine("");
-            }
         }
     }
 }

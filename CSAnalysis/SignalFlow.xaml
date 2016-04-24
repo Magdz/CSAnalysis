@@ -29,6 +29,9 @@
             <ScrollViewer HorizontalAlignment="Left" Height="286" Margin="44,238,0,0" VerticalAlignment="Top" Width="552">
                 <TextBlock x:Name="AddedEdgesText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="21.333" FontWeight="Bold"/>
             </ScrollViewer>
+            <ScrollViewer HorizontalAlignment="Right" Height="286" Margin="44,238,0,0" VerticalAlignment="Top" Width="500">
+                <TextBlock x:Name="ResultsText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="21.333" FontWeight="Bold"/>
+            </ScrollViewer>
         </Grid>
 
     </Grid>
