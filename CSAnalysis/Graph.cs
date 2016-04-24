@@ -16,6 +16,7 @@ namespace CSAnalysis
 
         public List<Path> Paths;
         public List<Path> Loops;
+        public List<List<int>> NonTouching;
 
         private static bool[] visited;
         private static List<string> PathGain;
@@ -53,6 +54,8 @@ namespace CSAnalysis
                 BackTracking(i, i, Track.Loop);
                 visited[i] = true;
             }
+            NonTouching = new List<List<int>>();
+            NonTouchingLoops();
         }
 
         private void BackTracking(int start, int end, Track track)
@@ -85,6 +88,30 @@ namespace CSAnalysis
             visited[start] = false;
         }
 
+        private void NonTouchingLoops()
+        {
+            for (int i = 0; i < (Loops.Count + 1) / 2; ++i) 
+            {
+                NonTouching.Add(new List<int>());
+                for (int j = i; j < Loops.Count; ++j) 
+                {
+                    if (!TouchDetector(Loops[i], Loops[j])) NonTouching[i].Add(j);
+                }
+            }
+        }
+
+        private bool TouchDetector(Path Path1, Path Path2)
+        {
+            foreach (int node1 in Path1.Nodes)
+            {
+                foreach (int node2 in Path2.Nodes)
+                {
+                    if (node1 == node2) return true;
+                }
+            }
+            return false;
+        }
+
         public void Debugging()
         {
             //for (int i = 0; i < Nodes; ++i)
@@ -95,6 +122,15 @@ namespace CSAnalysis
             //    }
             //    Debug.WriteLine("");
             //}
+            Debug.WriteLine("Non Touching List:");
+            foreach(List<int> List in NonTouching)
+            {
+                foreach(int node in List)
+                {
+                    Debug.Write(node + ",");
+                }
+                Debug.WriteLine("");
+            }
         }
     }
 }

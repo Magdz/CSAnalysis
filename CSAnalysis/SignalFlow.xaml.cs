@@ -97,7 +97,7 @@ namespace CSAnalysis
         private void button_Click(object sender, RoutedEventArgs e)
         {
             theGraph.Analyze();
-            //theGraph.Debugging();
+            theGraph.Debugging();
             ShowResults();
         }
 
@@ -133,8 +133,15 @@ namespace CSAnalysis
                 }
                 ResultsText.Text += "\n";
             }
-            //--------------------------------Loops---------------------------------
-
+            //--------------------------------Non Touching---------------------------------
+            ResultsText.Text += "Two Non-Touching Loops:\n";
+            foreach (List<int> List in theGraph.NonTouching)
+            {
+                foreach (int node in List)
+                {
+                    ResultsText.Text += "L" + (theGraph.NonTouching.IndexOf(List)+1) + "&L" + (node+1) + "\n";
+                }
+            }
         }
     }
 }
